@@ -14,6 +14,9 @@ import { PotyComponent } from './layout/poty/poty.component';
 import { PNewsComponent } from './layout/poty/p-news/p-news.component';
 import { HeaderPotyComponent } from './layout/poty/header-poty/header-poty.component';
 import { HeaderComponent } from './header/header.component';
+import { HomeComponent } from './home/home.component';
+import { YGalleryComponent } from './layout/yoga/y-gallery/y-gallery.component';
+
 
 
 @NgModule({
@@ -25,7 +28,9 @@ import { HeaderComponent } from './header/header.component';
     PotyComponent,
     PNewsComponent,
     HeaderPotyComponent,
-    HeaderComponent
+    HeaderComponent,
+    HomeComponent,
+    YGalleryComponent
   ],
   imports: [
     BrowserModule,

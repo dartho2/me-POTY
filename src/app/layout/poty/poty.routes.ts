@@ -4,6 +4,6 @@ import { PNewsComponent } from './p-news/p-news.component';
 import { PotyComponent } from './poty.component';
 
 export const POTY_ROUTES: Routes = [
-    { path: '7mepoty', component: PotyComponent },
+    { path: '7mepoty', component: PNewsComponent },
     { path: '7mepoty/news', component: PNewsComponent }
 ];

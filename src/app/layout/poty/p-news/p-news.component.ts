@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Poty } from '../poty.model';
+import { PotyService } from '../poty.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-p-news',
@@ -7,9 +10,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PNewsComponent implements OnInit {
 
-  constructor() { }
+  potys: Poty[] = []
+  private potysSub: Subscription;
+
+  constructor(public potysService: PotyService) { }
 
   ngOnInit() {
-  }
+      this.potysService.getPotys();
+    this.potysSub = this.potysService.getPotyUpdatedListener()
+      .subscribe((potys: Poty[]) => {
+        this.potys = potys;
 
-}
+      })
+
+    }
+  }
+  

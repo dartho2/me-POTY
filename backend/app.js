@@ -1,11 +1,12 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require('mongoose');
-const path = require("path");
+// const path = require("path");
 const app = express();
 const YogaRoutes = require("./routes/yoga")
+const PotyRoutes = require("./routes/poty")
 const db = "mongodb://darth:pawel1988@ds217002.mlab.com:17002/angulardb"
-const Yoga = require('./models/yoga')
+// const Yoga = require('./models/yoga')
 
 mongoose.connect(db, err => {
     if (err) {
@@ -30,6 +31,6 @@ app.use((req,res,next) =>{
     next();
 });
 
-
+app.use("/api/poty", PotyRoutes);
 app.use("/api/yoga", YogaRoutes);
 module.exports = app;

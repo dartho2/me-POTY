@@ -1,12 +1,12 @@
 const express = require("express");
-const Yoga = require("../models/yoga");
+const Poty = require("../models/poty");
 const router = express.Router();
 
 router.get("", (req, res, next) => {
-  Yoga.find().then(documents => {
+  Poty.find().then(documents => {
     res.status(200).json({
       message: "Posts fetched successfully!",
-      yoga: documents
+      poty: documents
     });
   });
 });
