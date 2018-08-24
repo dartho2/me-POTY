@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Yoga } from './yoga.model';
+import { YogaService } from './yoga.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-yoga',
@@ -7,9 +10,6 @@ import { Component, OnInit } from '@angular/core';
 })
 export class YogaComponent implements OnInit {
 
-  constructor() { }
-
   ngOnInit() {
   }
-
 }

@@ -1,7 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { AppRoutingModule } from './app.routing';
+import { HttpClientModule } from '@angular/common/http'
+import { RouterModule } from '@angular/router';
 
+import { AppRoutingModule } from './app.routing';
 import { AppComponent } from './app.component';
 
 
@@ -27,7 +29,9 @@ import { HeaderComponent } from './header/header.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]

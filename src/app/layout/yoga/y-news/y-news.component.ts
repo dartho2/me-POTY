@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Yoga } from '../yoga.model';
+import { YogaService } from '../yoga.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-y-news',
@@ -7,9 +10,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class YNewsComponent implements OnInit {
 
-  constructor() { }
+  yogas: Yoga[] = []
+  private yogasSub: Subscription;
+
+  constructor(public yogasService: YogaService) { }
 
   ngOnInit() {
-  }
+      this.yogasService.getYogas();
+    this.yogasSub = this.yogasService.getYogaUpdatedListener()
+      .subscribe((yogas: Yoga[]) => {
+        this.yogas = yogas;
 
+      })
+
+  }
 }

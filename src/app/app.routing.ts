@@ -8,13 +8,13 @@ import { PotyComponent } from "./layout/poty/poty.component";
 import { POTY_ROUTES } from './layout/poty/poty.routes';
 
 
-const APP_ROUTES: Routes = [
+const routes: Routes = [
     { path: '', component: YogaComponent, data: { title: 'Yoga Views' }, children: YOGA_ROUTES },
     { path: '', component: PotyComponent, data: { title: '7mepoty Views' }, children: POTY_ROUTES }
 ];
 
 @NgModule({
-    imports: [RouterModule.forRoot(APP_ROUTES)],
+    imports: [RouterModule.forRoot(routes)],
     exports: [RouterModule],
 })
 

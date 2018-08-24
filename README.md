@@ -1,6 +1,9 @@
-# TEST
+# TEST Start
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.1.4.
+npm update
+npm i
+npm start
+ng run start:server
 
 ## Development server
 
