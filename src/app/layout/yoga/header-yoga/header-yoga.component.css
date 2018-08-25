@@ -1,3 +1,33 @@
 .bg-darks{
     background-color: burlywood;
 }
+.y-dark {
+    display: flex;
+    padding: 0 12px;
+}
+.y-bound {
+    padding-left: 16px;
+}
+.head-menu-g {
+    background-color: black;
+    position: relative;
+    z-index: 1031;
+    max-width: 100%;
+    display: -webkit-box;
+    display: -moz-box;
+    display: box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+@media (min-width: 768px) { 
+    .y-height {
+        height: 34px;
+    } 
+    .navbar-expand-md .navbar-collapse {
+              padding-left: 150px;
+    }
+}
+
+ 

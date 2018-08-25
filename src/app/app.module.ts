@@ -16,6 +16,13 @@ import { HeaderPotyComponent } from './layout/poty/header-poty/header-poty.compo
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { YGalleryComponent } from './layout/yoga/y-gallery/y-gallery.component';
+import { YTypeComponent } from './layout/yoga/y-type/y-type.component';
+import { YAdvantageComponent } from './layout/yoga/y-advantage/y-advantage.component';
+import { YTeacherComponent } from './layout/yoga/y-teacher/y-teacher.component';
+import { YYogaComponent } from './layout/yoga/y-yoga/y-yoga.component';
+import { YCuriosityComponent } from './layout/yoga/y-curiosity/y-curiosity.component';
+import { YBuyComponent } from './layout/yoga/y-buy/y-buy.component';
+import { YPriceComponent } from './layout/yoga/y-price/y-price.component';
 
 
 
@@ -30,7 +37,14 @@ import { YGalleryComponent } from './layout/yoga/y-gallery/y-gallery.component';
     HeaderPotyComponent,
     HeaderComponent,
     HomeComponent,
-    YGalleryComponent
+    YGalleryComponent,
+    YTypeComponent,
+    YAdvantageComponent,
+    YTeacherComponent,
+    YYogaComponent,
+    YCuriosityComponent,
+    YBuyComponent,
+    YPriceComponent
   ],
   imports: [
     BrowserModule,
