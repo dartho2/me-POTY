@@ -22,7 +22,7 @@ export class YogaService {
                             yoga: {
                                 label: yoga.yoga.label,
                                 sections: [{
-                                    name:  yoga.yoga.sections.name,  //idk?
+                                    name:  yoga.yoga.sections[0].name,  //idk?
                                     label: yoga.yoga.sections.label,       //idk?          
                                 }]
                             },

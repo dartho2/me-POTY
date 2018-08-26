@@ -1,9 +1,12 @@
 <h1>Yoga</h1>
+
+
 <div *ngFor="let yoga of yogas">
   <p>{{yoga.yoga.label}}</p>
-  <div *ngFor="let a of yoga.yoga.sections">
-      <p> ??? {{a[a]}} </p> 
-      <!-- //idk? -->
-      
- 
 
+  <div *ngFor="let a of yoga.yoga.sections">
+
+    <p> ??? {{a.name}} </p>
+  </div>
+</div>
+<!-- //idk? -->
