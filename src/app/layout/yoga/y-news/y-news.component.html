@@ -1,15 +1,9 @@
+<h1>Yoga</h1>
 <div *ngFor="let yoga of yogas">
-    <br> <br> <br> <p>{{yoga.title}}</p><br>
-    <p>{{yoga.point1}}</p>
-    <p>{{yoga.point2}}</p>
-    <p>{{yoga.point3}}</p>
-    <p>{{yoga.point4}}</p>
-    <p>{{yoga.point5}}</p>
-    <p>{{yoga.point6}}</p>
-    <p> ------ {{yoga.zajecia.p1}}</p>
-  </div>
-  
-  <br><br>sdasda
-  <br><br>sdasda
-  <br><br>sdasda
-  
+  <p>{{yoga.yoga.label}}</p>
+  <div *ngFor="let a of yoga.yoga.sections">
+      <p> ??? {{a[a]}} </p> 
+      <!-- //idk? -->
+      
+ 
+

@@ -19,21 +19,27 @@ export class YogaService {
             map((yogaData) => {
                 return yogaData.yoga.map(yoga => {
                     return {
-                        title: yoga.title,
-                        point1: yoga.point1,
-                        point2: yoga.point2,
-                        point3: yoga.point3,
-                        point4: yoga.point4,
-                        point5: yoga.point5,
-                        point6: yoga.point6,
-                        zajecia: {
-                            p1: yoga.zajecia.p1
-                        },
-                        id: yoga._id
+                            yoga: {
+                                label: yoga.yoga.label,
+                                sections: [{
+                                    name:  yoga.yoga.sections.name,  //idk?
+                                    label: yoga.yoga.sections.label,       //idk?          
+                                }]
+                            },
+                            fitness: {
+                                label: yoga.fitness.label,
+                                sections: [{
+                                        name: yoga.fitness.sections.name, //idk?
+                                        label: yoga.fitness.sections.label    //idk?                  
+                                    }]
+                            },
+                            id: yoga._id
+                        
                     };
                 });
             }))
         .subscribe(transformedYogas => {                       // transformedPosts because we need chane mongo "_id" to "id"
+            
             this.yogas = transformedYogas;
             this.yogasUpdated.next([...this.yogas]);
         });
