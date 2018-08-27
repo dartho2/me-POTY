@@ -6,7 +6,26 @@
 
   <div *ngFor="let a of yoga.yoga.sections">
 
-    <p> ??? {{a.name}} </p>
+    <p> {{a.name}} </p>
+    <p>{{a.label}}</p>
+    <div *ngFor="let c of a.data">
+        <p>{{c.type}}</p>
+      </div>
   </div>
 </div>
-<!-- //idk? -->
+
+
+<!-- <h1>Yoga print</h1>
+<div *ngFor="let b of contentYoga">
+
+  <p> {{b.yoga.label}} </p>
+  <div *ngFor="let a of b.yoga.sections">
+
+    <p> {{a.name}} </p>
+    <p> {{a.label}} </p>
+    <div *ngFor="let c of a.data">
+      <p>-{{c.type}}</p>
+    </div>
+  </div>
+
+</div> -->

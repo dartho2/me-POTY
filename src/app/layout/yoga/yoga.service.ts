@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Subject } from 'rxjs';
+import { Subject, Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators'
 
@@ -15,6 +15,7 @@ export class YogaService {
 
     getYogas() {
         this._http.get<{ message: string, yoga: any }>('http://localhost:3000/api/yoga')
+      
         .pipe(
             map((yogaData) => {
                 return yogaData.yoga.map(yoga => {
@@ -23,7 +24,10 @@ export class YogaService {
                                 label: yoga.yoga.label,
                                 sections: [{
                                     name:  yoga.yoga.sections[0].name,  //idk?
-                                    label: yoga.yoga.sections.label,       //idk?          
+                                    label: yoga.yoga.sections[0].label,       //idk?   
+                                    data: [{
+                                        type:  yoga.yoga.sections[0].data[0].type
+                                    }]       
                                 }]
                             },
                             fitness: {
@@ -38,12 +42,29 @@ export class YogaService {
                     };
                 });
             }))
+            // .subscribe(response => {
+            //     console.log(response)
+            // })
         .subscribe(transformedYogas => {                       // transformedPosts because we need chane mongo "_id" to "id"
             
             this.yogas = transformedYogas;
             this.yogasUpdated.next([...this.yogas]);
         });
     }
+//     getAll() {
+//         return this._http.get("http://localhost:3000/api/yoga")
+//           .pipe(map(response => response))
+//       }
+//     handleError(handleError: any): any {
+//         throw new Error("Method not implemented.");
+//     }
+//     getData(): Observable<Yoga[]> {
+//         // return this._http.get('http://localhost:3000/api/yoga').map(res => res.json());
+//         return this._http.get('http://localhost:3000/api/yoga')
+//         .pipe(map(res => {
+//             return this.yogas;}))
+        
+//  }
     getYogaUpdatedListener() {
         return this.yogasUpdated.asObservable();
     }

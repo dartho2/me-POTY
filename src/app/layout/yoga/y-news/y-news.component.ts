@@ -9,7 +9,7 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./y-news.component.css']
 })
 export class YNewsComponent implements OnInit {
-
+  contentYoga: any;
   yogas: Yoga[] = []
   private yogasSub: Subscription;
 
@@ -23,5 +23,10 @@ export class YNewsComponent implements OnInit {
 
       })
 
+      // this.yogasService.getData().subscribe(res => this.contentYoga = res);
+        
+
   }
+
+
 }
