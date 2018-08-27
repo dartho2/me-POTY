@@ -14,42 +14,44 @@ export class YogaService {
     constructor(private _http: HttpClient, private router: Router) {}
 
     getYogas() {
-        this._http.get<{ message: string, yoga: any }>('http://localhost:3000/api/yoga')
+        return this._http.get("https://yoga-server.herokuapp.com/api/portals")
+        
+        // this._http.get<{ message: string, yoga: any }>('https://yoga-server.herokuapp.com/api/portals')
       
-        .pipe(
-            map((yogaData) => {
-                return yogaData.yoga.map(yoga => {
-                    return {
-                            yoga: {
-                                label: yoga.yoga.label,
-                                sections: [{
-                                    name:  yoga.yoga.sections[0].name,  //idk?
-                                    label: yoga.yoga.sections[0].label,       //idk?   
-                                    data: [{
-                                        type:  yoga.yoga.sections[0].data[0].type
-                                    }]       
-                                }]
-                            },
-                            fitness: {
-                                label: yoga.fitness.label,
-                                sections: [{
-                                        name: yoga.fitness.sections.name, //idk?
-                                        label: yoga.fitness.sections.label    //idk?                  
-                                    }]
-                            },
-                            id: yoga._id
+        // .pipe(
+        //     map((yogaData) => {
+        //         return yogaData.yoga.map(yoga => {
+        //             return {
+        //                     yoga: {
+        //                         label: yoga.yoga.label,
+        //                         sections: [{
+        //                             name:  yoga.yoga.sections[0].name,  //idk?
+        //                             label: yoga.yoga.sections[0].label,       //idk?   
+        //                             data: [{
+        //                                 type:  yoga.yoga.sections[0].data[0].type
+        //                             }]       
+        //                         }]
+        //                     },
+        //                     fitness: {
+        //                         label: yoga.fitness.label,
+        //                         sections: [{
+        //                                 name: yoga.fitness.sections.name, //idk?
+        //                                 label: yoga.fitness.sections.label    //idk?                  
+        //                             }]
+        //                     },
+        //                     id: yoga._id
                         
-                    };
-                });
-            }))
+        //             };
+        //         });
+        //     }))
             // .subscribe(response => {
             //     console.log(response)
             // })
-        .subscribe(transformedYogas => {                       // transformedPosts because we need chane mongo "_id" to "id"
+        // .subscribe(transformedYogas => {                       // transformedPosts because we need chane mongo "_id" to "id"
             
-            this.yogas = transformedYogas;
-            this.yogasUpdated.next([...this.yogas]);
-        });
+        //     this.yogas = transformedYogas;
+        //     this.yogasUpdated.next([...this.yogas]);
+        // });
     }
 //     getAll() {
 //         return this._http.get("http://localhost:3000/api/yoga")

@@ -12,7 +12,7 @@ import { YTypeComponent } from './y-type/y-type.component';
 import { YYogaComponent } from './y-yoga/y-yoga.component';
 
 export const YOGA_ROUTES: Routes = [
-    { path: 'yoga', component: YogaComponent },
+    { path: 'yoga', component: YNewsComponent },
     { path: 'yoga/zalety', component: YAdvantageComponent },
     { path: 'yoga/cennik', component: YBuyComponent },
     { path: 'yoga/ciekawostki', component: YCuriosityComponent },

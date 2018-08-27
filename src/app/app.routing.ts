@@ -11,7 +11,7 @@ import { AppComponent } from './app.component';
 
 const routes: Routes = [
     // Home page for first Page as 
-    { path: '', component: AppComponent, data: { title: 'Home' }},
+    // { path: '', component: AppComponent, data: { title: 'Home' }},
     { path: '', component: HomeComponent, data: { title: 'Home' }},
     { path: '', component: PotyComponent, data: { title: '7mepoty Views' }, children: POTY_ROUTES },
     { path: '', component: YogaComponent, data: { title: 'Yoga Views' }, children: YOGA_ROUTES },

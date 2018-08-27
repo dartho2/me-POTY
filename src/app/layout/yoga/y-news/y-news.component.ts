@@ -16,12 +16,17 @@ export class YNewsComponent implements OnInit {
   constructor(public yogasService: YogaService) { }
 
   ngOnInit() {
-      this.yogasService.getYogas();
-    this.yogasSub = this.yogasService.getYogaUpdatedListener()
-      .subscribe((yogas: Yoga[]) => {
-        this.yogas = yogas;
 
-      })
+    this.yogasService.getYogas().subscribe((data: Yoga[]) => {
+      console.log(data[0])
+      this.yogas = data;
+    })
+    //   this.yogasService.getYogas();
+    // this.yogasSub = this.yogasService.getYogaUpdatedListener()
+    //   .subscribe((yogas: Yoga[]) => {
+    //     this.yogas = yogas;
+
+    //   })
 
       // this.yogasService.getData().subscribe(res => this.contentYoga = res);
         

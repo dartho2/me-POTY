@@ -1,10 +1,16 @@
 <h1>Yoga</h1>
 
-
 <div *ngFor="let yoga of yogas">
-  <p>{{yoga.yoga.label}}</p>
+ <a routerLink="/{{yoga['name']}}">{{yoga['name']}}</a>
+ <li *ngFor="let a of yoga.sections">
+  <a routerLink="/{{yoga['name']}}/{{a['name']}}">{{a['name']}}</a>
+ </li>
+</div>
+<!-- 
+<div *ngFor="let yoga of yogas">
+  <p>{{yoga.label}}</p>
 
-  <div *ngFor="let a of yoga.yoga.sections">
+  <div *ngFor="let a of yoga.sections">
 
     <p> {{a.name}} </p>
     <p>{{a.label}}</p>
@@ -12,7 +18,12 @@
         <p>{{c.type}}</p>
       </div>
   </div>
-</div>
+</div> -->
+<!-- <li class="prod-dropdown" ng-repeat="let yoga of yogas">
+  <a routerLink="#{{yoga.label}}"></a>
+  
+
+</li> -->
 
 
 <!-- <h1>Yoga print</h1>
