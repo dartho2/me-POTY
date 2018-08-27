@@ -1,4 +1,13 @@
-<div class="goc-el y-dark overlay" id="goc-menu">
+<hr>
+<h1>HEADER Component</h1>
+<div *ngFor="let yoga of yogas">
+    <a routerLink="/{{yoga['name']}}">{{yoga['name']}}</a>
+    <li *ngFor="let a of yoga.sections">
+     <a routerLink="/{{yoga['name']}}/{{a['name']}}">{{a['name']}}</a>
+    </li>
+   </div>
+   <hr />
+<!-- <div class="goc-el y-dark overlay" id="goc-menu">
     <div class="y-bound">
         
         <ul class="head-menu-g">
@@ -53,4 +62,4 @@
         </ul>
 
     </div>
-</nav>
+</nav> -->

@@ -10,6 +10,7 @@ import { Subscription } from 'rxjs';
 })
 export class YNewsComponent implements OnInit {
   contentYoga: any;
+  
   yogas: Yoga[] = []
   private yogasSub: Subscription;
 
@@ -17,9 +18,17 @@ export class YNewsComponent implements OnInit {
 
   ngOnInit() {
 
-    this.yogasService.getYogas().subscribe((data: Yoga[]) => {
+    this.yogasService.getYogas()
+    .subscribe((data: Yoga[]) => {
+      // for(let i = 0; i < data.length; i++){
+      //   if (data[i].name == "yoga") {
+      //     this.yogas = data[i];
+      //     this.yogas.push(this.yogas);
+
+      //   }
+      // }
       console.log(data[0])
-      this.yogas = data;
+      this.yogas = data.filter(data => data['name'] == "yoga")
     })
     //   this.yogasService.getYogas();
     // this.yogasSub = this.yogasService.getYogaUpdatedListener()

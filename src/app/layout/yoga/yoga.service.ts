@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Subject, Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import { map } from 'rxjs/operators'
-
+import { map, filter } from 'rxjs/operators';
 import { Yoga } from './yoga.model';
 import { Router } from '@angular/router';
 
@@ -15,6 +14,11 @@ export class YogaService {
 
     getYogas() {
         return this._http.get("https://yoga-server.herokuapp.com/api/portals")
+        // .pipe(
+        //     map(items => {
+        //       return items.filter(items => items.name === "yoga");
+        //     }, error => error)) 
+        }
         
         // this._http.get<{ message: string, yoga: any }>('https://yoga-server.herokuapp.com/api/portals')
       
@@ -52,7 +56,7 @@ export class YogaService {
         //     this.yogas = transformedYogas;
         //     this.yogasUpdated.next([...this.yogas]);
         // });
-    }
+    
 //     getAll() {
 //         return this._http.get("http://localhost:3000/api/yoga")
 //           .pipe(map(response => response))
