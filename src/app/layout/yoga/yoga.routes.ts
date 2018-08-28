@@ -12,10 +12,10 @@ import { YTypeComponent } from './y-type/y-type.component';
 import { YYogaComponent } from './y-yoga/y-yoga.component';
 
 export const YOGA_ROUTES: Routes = [
-    { path: 'yoga', component: YNewsComponent },
-    { path: 'yoga/zalety', component: YAdvantageComponent },
-    { path: 'yoga/cennik', component: YBuyComponent },
-    { path: 'yoga/ciekawostki', component: YCuriosityComponent },
+    { path: 'studio_jogi', component: YNewsComponent },
+    { path: 'studio_jogi/lessons', component: YAdvantageComponent },
+    { path: 'studio_jogi/treners', component: YBuyComponent },
+    { path: 'studio_jogi/callendar', component: YCuriosityComponent },
     { path: 'yoga/galeria', component: YGalleryComponent },
     { path: 'yoga/aktualnosci', component: YNewsComponent },
     { path: 'yoga/do-kupienia', component: YPriceComponent },

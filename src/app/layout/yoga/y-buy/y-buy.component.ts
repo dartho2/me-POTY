@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { YogaService } from '../yoga.service';
+import { Yoga } from '../yoga.model';
 
 @Component({
   selector: 'app-y-buy',
@@ -6,10 +8,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./y-buy.component.css']
 })
 export class YBuyComponent implements OnInit {
-
-  constructor() { }
+  yogas: Yoga[] = []
+  constructor(private yogasService: YogaService) { }
 
   ngOnInit() {
+    this.yogasService.getYogas()
+    .subscribe((data: Yoga[]) => {
+      this.yogas = data.filter(data => data['name'] == "studio_jogi")
+      console.log(this.yogas)
+    })
   }
 
 }

@@ -20,7 +20,7 @@ export class HeaderYogaComponent implements OnInit {
 
     this.yogasService.getYogas()
     .subscribe((data: Yoga[]) => {
-      this.yogas = data.filter(data => data['name'] == "yoga")
+      this.yogas = data.filter(data => data['name'] == "studio_jogi")
     })
   }
   
